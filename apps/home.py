@@ -26,6 +26,10 @@ from utils.commands import (
     Media,
     PreviousAppCommand,
     SwitchAppCommand,
+    Sequence,
+    Press,
+    Keycode,
+    Wait
 )
 from utils.constants import (
     COLOR_APPS,
@@ -114,6 +118,10 @@ class HomeApp(KeyApp):
         cls.key_6 = Key(
             text="Apps", color=COLOR_APPS, command=SwitchAppCommand(app_switcher_app)
         )
+
+        cls.key_7 = Key(
+            text="Sound", color=COLOR_WINDOWS, command=Sequence(Press(Keycode.CONTROL, Keycode.ALT, Keycode.HOME),Wait(0.3),Press(Keycode.CONTROL, Keycode.ALT, Keycode.F11)),
+        )   
 
         window_manager_app = WindowManagementApp(app_pad, settings)
         cls.key_8 = Key(
