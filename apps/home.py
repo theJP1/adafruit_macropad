@@ -72,9 +72,9 @@ class HomeApp(KeyApp):
     name = "Home"
 
     # Fourth row
-    key_9 = Key("<<", COLOR_MEDIA, Media(ConsumerControlCode.SCAN_PREVIOUS_TRACK))
-    key_10 = Key(">||", COLOR_MEDIA, Media(ConsumerControlCode.PLAY_PAUSE))
-    key_11 = Key(">>", COLOR_MEDIA, Media(ConsumerControlCode.SCAN_NEXT_TRACK))
+    key_9 = Key("<<", COLOR_MEDIA, Sequence(Press(Keycode.CONTROL, Keycode.ALT, Keycode.HOME),Wait(0.3), Media(ConsumerControlCode.SCAN_PREVIOUS_TRACK)))
+    key_10 = Key(">||", COLOR_MEDIA, Sequence(Press(Keycode.CONTROL, Keycode.ALT, Keycode.HOME),Wait(0.3), Media(ConsumerControlCode.PLAY_PAUSE)))
+    key_11 = Key(">>", COLOR_MEDIA, Sequence(Press(Keycode.CONTROL, Keycode.ALT, Keycode.HOME),Wait(0.3), Media(ConsumerControlCode.SCAN_NEXT_TRACK)))
 
     encoder_button = Media(ConsumerControlCode.MUTE)
 
