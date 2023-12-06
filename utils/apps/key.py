@@ -105,7 +105,7 @@ class KeyAppSettings(BaseSettings):
     }
     host_os: str = OS_WINDOWS
     pixels_disabled: bool = False
-    pixels_disabled_timeout: int = 15 * ONE_MINUTE
+    pixels_disabled_timeout: int = 60 * ONE_MINUTE
 
     def __init__(
         self,
